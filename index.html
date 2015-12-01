@@ -1,0 +1,1893 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="
+CodeMonk: Tutorial series aims to take your programming skills to the next level. CodeMonk focuses on aspiring programmers who aim to be better at coding.
+ HackerEarth is a network of top developers across the world. Developers participate in online coding challenges and hackathons, solve problems and discover the best jobs." >
+        <link rel="canonical" href="https://www.hackerearth.com/codemonk/" />
+        <meta name="msvalidate.01" content="1BF418E510B5A17A2D71685C571BF4EB" />
+
+        <!-- Errorception tracking snippet -->
+        <script>
+            (function(_,e,rr,s){_errs=[s];var c=_.onerror;_.onerror=function(){var a=arguments;_errs.push(a);
+            c&&c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
+            c.src="//beacon.errorception.com/"+s+".js";c.async=!0;b.parentNode.insertBefore(c,b)};
+            _.addEventListener?_.addEventListener("load",b,!1):_.attachEvent("onload",b)})
+            (window,document,"script","55ba39a81acd32ac7d0002d4");
+        </script>
+
+
+<meta name="google-site-verification" content="ozqyeStBcz4eehbY9Ohb_IUQcA4y8BKzzDCT-H1QPPc" />
+
+
+        <title>  Code Monk - Be a better programmer  </title>
+
+
+<!-- Facebook tags -->
+<meta property="og:title" content="Code Monk - Be a better programmer"/>
+<meta property="og:image" content="https://hackerearth.global.ssl.fastly.net/static/problems/images/codeMonkLogo.png" />
+<meta property="og:description" content="CodeMonk: Tutorial series aims to take your programming skills to the next level. CodeMonk focuses on aspiring programmers who aim to be better at coding."/>
+<meta property="og:url" content="https://www.hackerearth.com/codemonk/"/>
+<meta property="og:site_name" content="HackerEarth"/>
+<meta property="og:type" content="website"/>
+<!-- end Facbook tags -->
+
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@HackerEarth"/>
+<meta name="twitter:url" content="https://www.hackerearth.com/codemonk/"/>
+<meta name="twitter:title" content="Code Monk - Be a better programmer"/>
+<!-- end Twitter tags -->
+
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+
+        <link rel="shortcut icon" href="https://hackerearth.global.ssl.fastly.net/static/hackerearth/images/logo/HE_identity.png" type="image/x-icon">
+
+        <link rel="stylesheet" href="https://hackerearth.global.ssl.fastly.net/static/base/base_common_combined.css?v=9.6">
+        <link rel="stylesheet" href="https://hackerearth.global.ssl.fastly.net/static/js/tooltip/tipTip.css">
+        <link rel="stylesheet" href="https://hackerearth.global.ssl.fastly.net/static/offline/offline-theme-slide.css"/>
+        <link rel="stylesheet" type="text/css" href="https://hackerearth.global.ssl.fastly.net/static/thirdparty/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href='//fonts.googleapis.com/css?family=Bitter:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+
+
+
+        <!-- For chartbeat -->
+        <script type="text/javascript">var _sf_startpt=(new Date()).getTime();</script>
+
+        <!-- Make the static variable available for all js files -->
+        <script>
+            var STATIC_URL = "https://hackerearth.global.ssl.fastly.net/static/";
+        </script>
+
+        <!-- Store CSRF_COOKIE -->
+        <script>
+            var CSRF_COOKIE_USED = "True";
+            var CSRF_COOKIE = "VfqmmBdfQnzzHyNPc7El70L47COy6scx";
+        </script>
+
+
+<link rel="stylesheet" href="https://hackerearth.global.ssl.fastly.net/static/problems/code_monk.css?v=0.2">
+
+
+    </head>
+
+    <body>
+
+        <!-- Placeholder for any error message on the site -->
+        <div id="alert-message-holder">
+
+
+            <!-- put a dummy message box so that it can be used when cloning
+                 and adding more -->
+            <div class="alert-message hidden">
+                <div class="message float-left"></div>
+                <div class="cross-holder float-left"><span class="small-cross sprites"></span></div>
+                <div class="clear"></div>
+            </div>
+        </div> <!-- end alert-message-holder -->
+
+
+    <div id="top-prompt-container" class="hidden prompt-container"></div>
+
+
+
+        <header class="header">
+            <i class="fa fa-bars mobile-menu-btn"></i>
+            <nav class="navigation">
+
+                <a href="https://www.hackerearth.com" class="logo logo-h-terminal no-underline float-left track-header-logo"></a>
+
+
+
+                <ul class="nav-bar no-padding float-left tablet-hide">
+                    <!-- <li id="hackathons" class="nav-bar-menu "><a class="track-header-learn">HOME</a></li> -->
+                    <li id="challenges" class="nav-bar-menu "><a class="track-header-challenges" href="https://www.hackerearth.com/challenges/">CHALLENGES</a></li>
+                    <li id="problems" class="nav-bar-menu "><a class="track-header-problems" href="https://www.hackerearth.com/problems/">PROBLEMSET</a></li>
+                    <li id="learn" class="nav-bar-menu expand-sub-header selected"><a class="track-header-learn">LEARN</a></li>
+                    <li id="jobs" class="nav-bar-menu expand-sub-header "><a class="track-header-jobs">JOBS</a></li>
+                    <!-- <li id="hackathons" class="nav-bar-menu "><a class="track-header-learn">HACKATHONS</a></li> -->
+                    <li id="ama" class="nav-bar-menu "><a class="track-header-ama" href="https://www.hackerearth.com/ama/">AMA</a></li>
+                </ul>
+                <ul class="nav-bar right-nav-bar no-padding float-right tablet-hide">
+
+
+                    <li id="searchbar">
+                        <div id="search-icon-container" class="float-left">
+                            <i class="fa fa-search"></i>
+                        </div>
+                            <input id="searchbar-input" class="float-left" type="text" value="" name="q" autocomplete="off" spellcheck="false" placeholder="Search developers, problems, etc" ajax1="/search/AJAX/search/" ajax2="/search/search-results/" ></input>
+                        <div id="search-dropdown"></div>
+                    </li>
+
+
+
+
+                    <li id="header-notif-icon" class="">
+                        <a class="track-header-notifs tool-tip notification-icon" title="Notifications">
+                            <span id="notif-icon" expand="notifications-box" class="nav-bar-menu nav-menu pagelet-hover tablet-hide" ajax="/notifications/pagelets/new-notifications/" target="notifications-container">
+                                <i class="fa fa-bell"></i>
+
+                            </span>
+                        </a>
+                        <a class="track-header-notifs tool-tip notification-icon tablet-show" title="Notifications" href="https://www.hackerearth.com/notifications/">
+                            <span id="notif-icon-mob" class="nav-bar-menu">Notifications</li>
+                        </a>
+                    </li>
+
+
+
+                    <li class="">
+                        <a class="track-header-messages tool-tip message-icon tablet-hide" href="https://www.hackerearth.com/messages/" title="Messages">
+                            <i class="fa fa-envelope"></i>
+
+                        </a>
+                        <a class="track-header-messages tool-tip message-icon tablet-show" href="https://www.hackerearth.com/messages/" title="Messages">Messages</a>
+                    </li>
+
+
+
+
+
+                        <li id="user-name" class="nav-bar-menu tablet-hide"><a class="track-header-profile-box" href="https://www.hackerearth.com/users/pandusonu/"><img src="https://d320jcjashajb2.cloudfront.net/media/avatars/pandusonu/resized/30/ffd1753dp.jpg" alt="pandusonu" width="30" height="30" onerror="if(typeof handle_avatar_error=='function'){handle_avatar_error(this);}" /></a></li>
+
+
+
+
+                    <li id="hacker-dd-icon" expand="hacker-box" class="nav-bar-menu nav-menu"><a><div class="caret-icon"><i class="fa fa-caret-down"></i></div></a></li>
+
+
+
+
+                    <div class="clear"></div>
+                </ul> <!-- nav-bar -->
+                <div class="clear"></div>
+
+            </nav> <!-- navigation -->
+            <div class="sub-header learn-header hidden">
+                <ul class="sub-nav-bar">
+                    <li id="codemonk" class="sub-nav-bar-menu selected"><a class="track-header-codemonk" href="https://www.hackerearth.com/codemonk/">Code Monk</a></li>
+                    <li id="notes" class="sub-nav-bar-menu "><a class="track-header-notes" href="https://www.hackerearth.com/notes/">Notes</a></li>
+                    <div class="menu-arrow"></div>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="sub-header jobs-header hidden">
+                <ul class="sub-nav-bar">
+                    <li id="jobs-sub" class="sub-nav-bar-menu "><a class="track-header-job-listing" href="https://www.hackerearth.com/jobs/hiring/">Job Listings</a></li>
+                    <li id="companies" class="sub-nav-bar-menu "><a class="track-header-companies" href="https://www.hackerearth.com/companies/">Companies</a></li>
+                    <div class="menu-arrow"></div>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </header> <!-- header -->
+
+
+
+
+
+
+
+
+
+
+    <div id="comment-share-modal" class="modal-window small-modal">
+        <div class="modal-header">
+            Comment permalink
+        </div>
+        <div class="modal-content">
+            <div class="comment-share-wrapper align-center">
+                <textarea class="comment-share-text" type="textbox" rows="4" readonly="readonly" onclick="this.select();"></textarea>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- live events widget -->
+    <div id="live-events-trigger-data"></div>
+
+
+    <!-- This is the center page which has a fixed width of 1100px -->
+
+<div class="responsive-page">
+    <div class="responsive-container">
+        <div class="code-monk-cover">
+            <div class="code-monk-logo"></div>
+            <h2 class="code-monk-header dark">Code Monk</h2>
+            <p class="code-monk-text dark">This series aims to take your programming skills to the next level. The series focuses on aspiring programmers who aim to be better at coding. However, expert programmers can also use it as a mean to revise concepts and improve their programming karma.</p>
+            <i class="code-monk-text-italic dark">Happy Coding!</i>
+        </div><!-- code-monk-cover -->
+        <div class="codemonk-social">
+            <div class="fb-like" data-href="https://www.hackerearth.com/codemonk/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+            <a class="twitter-share-button" href="https://www.hackerearth.com/codemonk/" data-counturl="https://www.hackerearth.com/codemonk/" data-url="https://www.hackerearth.com/codemonk/">Tweet</a>
+        </div>
+    </div>
+</div>
+
+<div class="responsive-page denim-gray-texture">
+    <div class="responsive-container">
+        <div class="code-monk-page-data">
+            <div class="all-topics-container">
+                <div class="all-topics link float-right">
+                    <span class="expand-category">All Topics (23) <i class="fa fa-sort-desc"></i></span>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="topic-row-solved denim-gray-texture">
+                <div class="left-column">
+                    <h4 class="topic-header light codemonk-hide">Solved</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle full"></div>
+                    </div>
+                </div>
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="dark solved-head"></h4>
+                        <p class="topic-description float-left dark"></p>
+                        <span class="view-solved">View <i class="fa fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+
+
+            <div class="topic-row " data-category="Data Structures">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Arrays &amp; Strings</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Arrays &amp; Strings</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">An array is a sequential collection of variables of same data type which can be accessed using an integer as index, that generally starts from...
+
+                            <a href="/notes/array-and-strings-code-monk/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">An array is a sequential collection of variables of same data type which can be accessed using an...
+
+                            <a href="/notes/array-and-strings-code-monk/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/array-and-strings-code-monk/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-array-strings/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Algorithms">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Sorting</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Sorting</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">Sorting is a process of arranging items in ascending or descending order. This process can be implemented via many different algorithms.
+Foll...
+
+                            <a href="/notes/sorting-code-monk/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">Sorting is a process of arranging items in ascending or descending order. This process can be imp...
+
+                            <a href="/notes/sorting-code-monk/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/sorting-code-monk/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-sorting/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Algorithms">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Searching</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Searching</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">A. Introduction
+Searching is one of the most fundamental problems in Computer Science. It is the process of finding a particular item in a c...
+
+                            <a href="/notes/searching-code-monk/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">A. Introduction
+Searching is one of the most fundamental problems in Computer Science. It is th...
+
+                            <a href="/notes/searching-code-monk/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/searching-code-monk/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-searching/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Data Structures">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Stacks &amp; Queues</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Stacks &amp; Queues</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">We deal with data all the time, so how we store, organise or group our data, matters.
+Data Structures are tools which are used to store data ...
+
+                            <a href="/notes/stacks-and-queues/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">We deal with data all the time, so how we store, organise or group our data, matters.
+Data Struc...
+
+                            <a href="/notes/stacks-and-queues/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/stacks-and-queues/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-stacks-queues/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Maths">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Number Theory - 1</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Number Theory - 1</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">Introduction:
+Problems in competitive programming which involve Mathematics are are usually about number theory, or geometry. If you know numb...
+
+                            <a href="/notes/number-theory-1/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">Introduction:
+Problems in competitive programming which involve Mathematics are are usually about...
+
+                            <a href="/notes/number-theory-1/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/number-theory-1/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-number-theory-i/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Basic Programming">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Standard Template Library</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Standard Template Library</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">C++ Templates
+Templates are a feature of the C++ programming language that allows functions and classes to operate with generic types. This al...
+
+                            <a href="/notes/standard-template-library/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">C++ Templates
+Templates are a feature of the C++ programming language that allows functions and c...
+
+                            <a href="/notes/standard-template-library/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/standard-template-library/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-c-stl/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Graph Theory">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Graph Theory - Part I</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Graph Theory - Part I</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">Introduction:
+What is a graph? Do we use it a lot of times? Let’s think of an example: Facebook. The humongous network of you, your friends, f...
+
+                            <a href="/notes/graph-theory-part-i/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">Introduction:
+What is a graph? Do we use it a lot of times? Let’s think of an example: Facebook. ...
+
+                            <a href="/notes/graph-theory-part-i/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/graph-theory-part-i/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-graph-theory-i/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Basic Programming">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Hashing</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Hashing</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">Introduction:
+To store the key/value pair, we can use simple array like data structure where keys directly can be used as index to store value...
+
+                            <a href="/notes/hashing/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">Introduction:
+To store the key/value pair, we can use simple array like data structure where keys...
+
+                            <a href="/notes/hashing/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/hashing/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-hashing/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Algorithms">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Disjoint Set Union (Union Find)</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Disjoint Set Union (Union Find)</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">The efficiency of an algorithm sometimes depends on using an efficient data structure. A good choice of data structure can reduce the executio...
+
+                            <a href="/notes/disjoint-set-union-union-find/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">The efficiency of an algorithm sometimes depends on using an efficient data structure. A good cho...
+
+                            <a href="/notes/disjoint-set-union-union-find/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/disjoint-set-union-union-find/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-disjoint-set-union/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Data Structures">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Heaps and Priority Queues</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Heaps and Priority Queues</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">Heaps:
+A heap is a specific tree based data structure in which all the nodes of tree are in a specific order. Let’s say if X is a parent node ...
+
+                            <a href="/notes/heaps-and-priority-queues/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">Heaps:
+A heap is a specific tree based data structure in which all the nodes of tree are in a spe...
+
+                            <a href="/notes/heaps-and-priority-queues/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/heaps-and-priority-queues/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-heaps-and-priority-queues/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Data Structures">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Minimum Spanning Tree</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Minimum Spanning Tree</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">Graph is an ordered pair G = (V, E) where V is the set of nodes or vertices and E is the set of edges. Graphs are of two types:
+
+Undirected: U...
+
+                            <a href="/notes/minimum-spanning-tree/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">Graph is an ordered pair G = (V, E) where V is the set of nodes or vertices and E is the set of e...
+
+                            <a href="/notes/minimum-spanning-tree/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/minimum-spanning-tree/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-minimum-spanning-tree/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Algorithms">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Greedy Technique</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Greedy Technique</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">A. Introduction
+It’s unfortunate that in algorithm design there is no one "silver bullet" that is the cure for all computation problems. Diffe...
+
+                            <a href="/notes/greedy-algorithm/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">A. Introduction
+It’s unfortunate that in algorithm design there is no one "silver bullet" that is...
+
+                            <a href="/notes/greedy-algorithm/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/greedy-algorithm/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-greedy-technique/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Basic Programming">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Dynamic Programming</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Dynamic Programming</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">
+The image above says a lot about Dynamic Programming. So, is repeating the things for which you already have the answer, a good thing ? A pro...
+
+                            <a href="/notes/dynamic-programming-i-1/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">
+The image above says a lot about Dynamic Programming. So, is repeating the things for which you ...
+
+                            <a href="/notes/dynamic-programming-i-1/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/dynamic-programming-i-1/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-dynamic-programming/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Basic Programming">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Bit Manipulation</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Bit Manipulation</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">Working on bytes, or data types comprising of bytes like ints, floats, doubles or even data structures which stores large amount of bytes is n...
+
+                            <a href="/notes/bit-manipulation/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">Working on bytes, or data types comprising of bytes like ints, floats, doubles or even data struc...
+
+                            <a href="/notes/bit-manipulation/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/bit-manipulation/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-bit-manipulation/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Maths">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Computational Geometry</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Computational Geometry</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">This article has been written with the combined efforts of Ayush Jaggi and Arjit.  There are a lot of parts for the Computational Geometry art...
+
+                            <a href="/notes/computational-geometry-i-1/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">This article has been written with the combined efforts of Ayush Jaggi and Arjit.  There are a lo...
+
+                            <a href="/notes/computational-geometry-i-1/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/computational-geometry-i-1/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-computational-geometry/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Graph Theory">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Graph Theory – Part II</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Graph Theory – Part II</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">If this is the first time you hear about graphs, I strongly recommend to first read a great introduction to graph theory which has been prepar...
+
+                            <a href="/notes/graph-theory-part-ii/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">If this is the first time you hear about graphs, I strongly recommend to first read a great intro...
+
+                            <a href="/notes/graph-theory-part-ii/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/graph-theory-part-ii/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-graph-theory-ii/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Maths">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Number Theory Part II</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Number Theory Part II</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">Introduction
+Problems in competitive programming which involve Mathematics are are usually about number theory, or geometry. If you know numbe...
+
+                            <a href="/notes/number-theory-ii/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">Introduction
+Problems in competitive programming which involve Mathematics are are usually about ...
+
+                            <a href="/notes/number-theory-ii/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/number-theory-ii/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-number-theory-ii/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Algorithms">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Segment Tree, RMQ, Lazy Propagation</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Segment Tree, RMQ, Lazy Propagation</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">There are many problems in which you need to query on intervals or segments of a collection of items. For example, finding the sum of all the ...
+
+                            <a href="/notes/segment-tree-and-lazy-propagation/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">There are many problems in which you need to query on intervals or segments of a collection of it...
+
+                            <a href="/notes/segment-tree-and-lazy-propagation/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/segment-tree-and-lazy-propagation/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-segment-tree-and-lazy-propagation/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Data Structures">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Binary Indexed Tree</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Binary Indexed Tree</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">Binary Indexed Tree also called Fenwick Tree provides a way to represent an array of numbers in an array, allowing prefix sums to be calculate...
+
+                            <a href="/notes/binary-indexed-tree-or-fenwick-tree/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">Binary Indexed Tree also called Fenwick Tree provides a way to represent an array of numbers in a...
+
+                            <a href="/notes/binary-indexed-tree-or-fenwick-tree/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/binary-indexed-tree-or-fenwick-tree/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-binary-indexed-tree/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Algorithms">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">String Algorithms</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">String Algorithms</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">Preliminary Definitions
+A string is a sequence of characters. In our model we are going to represent a string as a 0-indexed array. So a strin...
+
+                            <a href="/notes/exact-string-matching-algorithms/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">Preliminary Definitions
+A string is a sequence of characters. In our model we are going to repres...
+
+                            <a href="/notes/exact-string-matching-algorithms/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/exact-string-matching-algorithms/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-string-algorithms/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Maths">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Number Theory – Part III</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle half"></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Number Theory – Part III</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">Euler's totient function
+
+Description: phi(N) counts the number of integers from 1 to N inclusive that are relatively prime to N.
+
+Implementio...
+
+                            <a href="/notes/number-theory-iii/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">Euler's totient function
+
+Description: phi(N) counts the number of integers from 1 to N inclusive...
+
+                            <a href="/notes/number-theory-iii/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/number-theory-iii/" class="button btn-blue" target="_blank">START</a>
+                                <a href="/code-monk-number-theory-iii/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Algorithms">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Tries, Suffix Tree</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Tries, Suffix Tree</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">In this Codemonk article, I am going to write about 3 very useful string data structures. The topic is very broad, and since all these data st...
+
+                            <a href="/notes/trie-suffix-tree-suffix-array/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">In this Codemonk article, I am going to write about 3 very useful string data structures. The top...
+
+                            <a href="/notes/trie-suffix-tree-suffix-array/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/trie-suffix-tree-suffix-array/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-triessuffix-tree/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+
+            <div class="topic-row " data-category="Basic Programming">
+                <div class="left-column">
+                    <h4 class="topic-header dark codemonk-hide">Dynamic Programming – Part II</h4>
+                    <div class="topic-status">
+                        <div class="topic-status-circle "></div>
+                    </div>
+                </div> <!-- left-column -->
+
+                <div class="right-column float-left">
+                    <div class="topic-container">
+                        <h4 class="topic-header dark codemonk-show">Dynamic Programming – Part II</h4>
+
+
+                        <p class="topic-description float-left dark codemonk-hide">In case, you are planning on reading this article, I’m going to assume that you know the basics of dynamic programming. If that isn’t the case...
+
+                            <a href="/notes/codemonk-dynamic-programming-ii-1/"> more</a>
+
+                        </p>
+
+                        <p class="topic-description float-left dark codemonk-show">In case, you are planning on reading this article, I’m going to assume that you know the basics o...
+
+                            <a href="/notes/codemonk-dynamic-programming-ii-1/"> more</a>
+
+                        </p>
+
+
+                        <div class="topic-links">
+
+
+                                <a href="/notes/codemonk-dynamic-programming-ii-1/" class="button btn-blue-outline" target="_blank">LEARN</a>
+                                <a href="/code-monk-dynamic-programming-part-ii/problems/" class="light" target="_blank">SOLVE PROBLEM</a>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div> <!-- topic-container -->
+                </div> <!-- right-column -->
+                <div class="clear"></div>
+            </div> <!-- topic-row -->
+
+
+        </div> <!-- page-data -->
+    </div> <!-- responsive-container -->
+</div> <!-- responsive-page -->
+<div class="codemonk-dropdown-box" id="codemonk-category-box">
+    <div class="down-arrow"></div>
+    <ul class="no-margin">
+        <a class="" href="javascript:;" data-category=""><li>All Topics (23)</li></a>
+
+
+
+
+            <a class="" href="javascript:;" data-category="Algorithms"><li>Algorithms (7)</li></a>
+
+
+
+            <a class="" href="javascript:;" data-category="Basic Programming"><li>Basic Programming (5)</li></a>
+
+
+
+            <a class="" href="javascript:;" data-category="Data Structures"><li>Data Structures (5)</li></a>
+
+
+
+            <a class="" href="javascript:;" data-category="Graph Theory"><li>Graph Theory (2)</li></a>
+
+
+
+            <a class="" href="javascript:;" data-category="Maths"><li>Maths (4)</li></a>
+
+
+    </ul>
+</div>  <!-- anonymous-box -->
+
+
+    <!-- include modal window for login/signup -->
+
+
+    <!-- override this block where we do not want the footer -->
+
+
+
+        <div class="footer-large">
+    <div class="content align-center">
+        <div class="section">
+            <h1 class="category-title">About Us</h1>
+            <ul>
+                <li><a target="_blank" href="http://blog.hackerearth.com/">Blog</a></li>
+                <li><a target="_blank" href="http://engineering.hackerearth.com/">Engineering Blog</a></li>
+
+                <li><a target="_blank" href="http://news.hackerearth.com/">Updates & Releases </a></li>
+
+                <li><a target="_blank" href="//www.hackerearth.com/team/">Team</a></li>
+                <li><a target="_blank" href="//www.hackerearth.com/careers/">Careers</a></li>
+                <li><a target="_blank" href="//www.hackerearth.com/in-media/">In the Press</a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h1 class="category-title">HackerEarth</h1>
+            <ul>
+                <li><a target="_blank" href="https://www.hackerearth.com/docs/api/developers/code/legacy/">API</a></li>
+                <li><a target="_blank" href="https://chrome.google.com/webstore/detail/hackerearth-extension/aileihjgpakhkhedejpkpamnhpbnjhoj?ref=footer">Chrome Extension</a></li>
+                <li><a target="_blank" href="//code.hackerearth.com">CodeTable</a></li>
+                <li><a target="_blank" href="//learn.hackerearth.com/">HackerEarth Academy</a></li>
+                <li><a href="//www.hackerearth.com/about/profile/">Developer Profile</a></li>
+                <li><a href="//www.hackerearth.com/resume/">Resume</a></li>
+                <li><a href="//www.hackerearth.com/campus/">Campus Ambassadors</a></li>
+                <li><a href="//www.hackerearth.com/getmehired/">Get Me Hired</a></li>
+                <li><a target="_blank" href="//www.hackerearth.com/privacy/">Privacy</a></li>
+                <li><a target="_blank" href="//www.hackerearth.com/terms-of-service/">Terms of Service</a></li>
+                <!--
+                <li><a target="_blank" href="http://status.hackerearth.com">System Status</a></li>
+                <li><a target="_blank" href="http://webchat.freenode.net/?channels=%23hackerearth">IRC</a></li>
+                -->
+            </ul>
+        </div>
+        <div class="section">
+            <h1 class="category-title">Developers</h1>
+            <ul>
+                <li><a href="//www.hackerearth.com/ama/">AMA</a></li>
+                <li><a href="//www.hackerearth.com/codemonk/">Code Monk</a></li>
+                <li><a href="//www.hackerearth.com/docs/wiki/developers/judge/">Judge Environment</a></li>
+                <li><a href="//www.hackerearth.com/docs/wiki/developers/solution-guide/">Solution Guide</a></li>
+                <li><a href="//www.hackerearth.com/docs/wiki/developers/setter-guide/">Problem Setter Guide</a></li>
+                <li><a href="//www.hackerearth.com/problems/">Practice Problems</a></li>
+                <li><a href="//www.hackerearth.com/challenges/">HackerEarth Challenges</a></li>
+                <li><a href="//www.hackerearth.com/college-challenges/">College Challenges</a></li>
+            </ul>
+        </div>
+        <div class="clear clear-show-tablet"></div>
+        <div class="section">
+            <h1 class="category-title">Recruit</h1>
+            <ul>
+                <li><a target="_blank" href="//www.hackerearth.com/recruit/source/">Developer Sourcing</a></li>
+                <li><a target="_blank" href="//www.hackerearth.com/recruit/lateral/">Lateral Hiring</a></li>
+                <li><a target="_blank" href="//www.hackerearth.com/recruit/campus/">Campus Hiring</a></li>
+                <li><a target="_blank" href="//www.hackerearth.com/recruit/faq/">FAQs</a></li>
+                <li><a target="_blank" href="//www.hackerearth.com/recruit/#customers-speak">Customers</a></li>
+                <li><a target="_blank" href="//www.hackerearth.com/annual-report-2014/">Annual Report</a></li>
+            </ul>
+
+        </div>
+        <div class="section connect">
+            <h1 class="category-title">Reach us</h1>
+            <div class="map standard-margin-right float-left">
+                <div style="overflow:hidden;height:130px;width:200px;">
+                    <div id="gmap_canvas" style="height:130px;width:200px;"></div>
+                    <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+                </div>
+                <!--<a class="mixpanel-logo" href="https://mixpanel.com/f/partner"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics" /></a>-->
+            </div>
+            <div class="reach">
+                <p class="small he-address">
+                IIIrd Floor, Salarpuria Business Center,<br/>4th B Cross Road, 5th A Block,<br/>Koramangala Industrial Layout,<br/>Bangalore, Karnataka 560095, India.
+                </p>
+                <p class="small weight-600 less-margin-bottom">
+                    <i class="fa fa-envelope less-margin-right"></i>
+                    <a href="mailto:contact@hackerearth.com">contact@hackerearth.com</a>
+                    <br/>
+                    <i class="fa fa-phone less-margin-right"></i>
+                    <a href="tel:+918041554695">+91-80-4155-4695</a>
+                    <br/>
+                    <i class="fa fa-phone less-margin-right"></i>
+                    <a href="tel:+16504614192">+1-650-461-4192</a>
+                </p>
+                <div class="less-margin-2 social-links large">
+                    <a href="https://www.facebook.com/HackerEarth" class="float-left lighter medium-margin-right" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                    <a href="https://twitter.com/hackerearth" class="float-left lighter medium-margin-right" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="https://www.linkedin.com/company/hackerearth" class="float-left lighter medium-margin-right" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="https://plus.google.com/+Hackerearth" class="float-left lighter medium-margin-right" target="_blank"><i class="fa fa-google-plus-square"></i></a>
+                    <div class="clear"></div>
+                </div>
+            </div> <!-- reach -->
+        </div> <!-- connect -->
+        <div class="clear"></div>
+    </div> <!-- end content -->
+    <div class="footer-bottom-container lighter small">
+        <div class="footer-bottom">
+
+            <img src="https://hackerearth.global.ssl.fastly.net/static/hackerearth/images/logo/HE_identity.png" />
+
+            <span class="align-right float-right">&copy; 2015 HackerEarth</span>
+        </div>
+    </div>
+
+</div> <!-- footer -->
+
+
+
+
+
+    <div class="expand-box" id="recruiter-box">
+        <div class="down-arrow"></div>
+        <ul class="no-margin">
+
+            <a href="https://www.hackerearth.com/recruiter/"><li>Recruiter Home</li></a>
+            <a href="/logout/?next=/codemonk/"><li>Logout</li></a>
+        </ul>
+    </div>
+
+
+    <div class="expand-box" id="hacker-box">
+        <div class="down-arrow"></div>
+        <ul class="no-margin">
+
+            <a class="track-header-profile-box-profile" href="https://www.hackerearth.com/users/pandusonu/">
+                <li>
+                    My Profile (53%)
+                    <div class="profile-complete-bar-head">
+                        <span class="profile-complete-bar"></span>
+                        <span class="profile-complete-bar-done"></span>
+                    </div>
+                </li>
+            </a>
+            <a class="track-header-profile-box-activity" href="https://www.hackerearth.com/users/pandusonu/activity/hackerearth/"><li>My Activity</li></a>
+            <a class="track-header-profile-box-settings" href="https://www.hackerearth.com/users/profile-settings/"><li>Account Settings</li></a>
+            <a class="track-header-profile-box-invite tablet-hide" href="https://www.hackerearth.com/invite/"><li>Invite Friends</li></a>
+
+            <hr class="hr"/>
+
+
+
+            <a class="track-header-profile-box-docs" href="https://www.hackerearth.com/docs/wiki/developers/"><li>Documentation</li></a>
+            <a class="track-header-profile-box-codetable tablet-hide" target="_blank" href="https://code.hackerearth.com"><li>CodeTable</li></a>
+            <a class="track-header-profile-box-getstarted tablet-hide" target="_blank" href="https://www.hackerearth.com/academy/getstarted/"><li>Get Started</li></a>
+
+            <hr class="hr"/>
+
+            <a class="track-header-profile-box-logout" href="/logout/?next=/codemonk/"><li>Logout</li></a>
+
+        </ul>
+    </div> <!-- hacker-box -->
+
+
+    <!-- Include notifications box -->
+
+
+<div class="expand-box" id="notifications-box">
+    <div class="down-arrow"></div>
+    <div class="notifications-title-container">
+        <div class="float-left weight-600">Notifications</div>
+        <div class="float-right">
+            <a href="#" ajax="https://www.hackerearth.com/notifications/AJAX/mark-all-read/" class="notif-mark-all-read link smaller clicky-ajax">Mark All as Read</a>
+        </div>
+        <div class="clear"></div>
+    </div> <!-- notifications-title-container -->
+
+    <div class="notifications-container nice-scrollbar" id="notifications-container">
+    </div> <!-- notifications-container -->
+
+    <div class="smaller caps weight-600 align-center less-margin-2 less-margin-2-bottom">
+        <a class="link" href="https://www.hackerearth.com/notifications/">View All Notifications</a>
+    </div>
+</div> <!-- notifications-box -->
+
+
+    <!-- Load notification icon with unread count -->
+    <div id="header-notif-icon-trigger" class="load-pagelet hidden" target="header-notif-icon" ajax="/notifications/pagelets/header-notif-icon-count/" show-loader="false"></div>
+
+
+    <!-- Load live events widget -->
+    <div id="live-events-trigger" class="load-pagelet hidden" target="live-events-trigger-data" ajax="/AJAX/live_feed_count/" show-loader="false"></div>
+
+
+
+    <a id="user-notice-check-btn" class="ajax-get" ajax="/notice/AJAX/check-notice/235172/?next=/codemonk/"></a>
+
+
+
+    <div id="indiahacks-widget-top" class="sliding-widget widget-top-right">
+        <div class="widget-container hidden">
+            <div class="content">
+                <div class="large dark weight-700 less-margin">
+                    Bring out the hacker in you and win a trip to -
+                </div>
+                <div class="sf-animation">
+                    <img src="https://hackerearth.global.ssl.fastly.net/static/hackerearth/images/indiahacks/2016/sf-trip.gif" />
+                </div>
+                <div class="less-margin-2 align-center">
+                    <a href="https://www.hackerearth.com/indiahacks-2016/?utm_source=widget-ih16&utm_medium=in-app-marketing&utm_campaign=indiahacks16-inapp" target="_blank" class="button btn-orange-bright weight-600 inline-block">Check out details <i class="fa fa-angle-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="widget-header pointer">
+            <img src="https://hackerearth.global.ssl.fastly.net/static/hackerearth/images/indiahacks/2016/indiaHacksLogo.png" />
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div id="indiahacks-widget-bottom" class="widget widget-bottom-left hidden">
+        <div class="widget-container">
+            <div class="widget-logo float-left">
+                <img src="https://hackerearth.global.ssl.fastly.net/static/hackerearth/images/indiahacks/2016/indiaHacksLogo.png" />
+            </div>
+            <div class="widget-close float-right align-right pointer">
+                <a>
+                    <i class="fa fa-times-circle fa-2x light"></i>
+                </a>
+            </div>
+            <div class="clear"></div>
+            <div class="large lighter weight-400 less-margin">
+                Bring out the hacker in you and win a trip to San Francisco.
+            </div>
+            <div class="less-margin-2">
+                <a href="https://www.hackerearth.com/indiahacks-2016/?utm_source=popup-ih16&utm_medium=in-app-marketing&utm_campaign=indiahacks16-inapp" target="_blank" class="button btn-orange-bright weight-600 inline-block">Check out details <i class="fa fa-angle-double-right"></i></a>
+            </div>
+        </div>
+        <div class="sf-bridge-img">
+            <img src="https://hackerearth.global.ssl.fastly.net/static/hackerearth/images/indiahacks/2016/sf-bridge.png" />
+        </div>
+    </div>
+
+
+
+
+        <!-- for adding extra html to the body, generally if you want to add absolute position that appear on click
+             then add them in this block. Please make sure that this block is not already being filled by the parent
+             template, if that is the case then to block.super after extending this block -->
+
+
+
+
+        <!-- Store any json returned for bigpipe -->
+        <div id="bigpipe-json" class="hidden">
+
+        </div>
+
+        <!-- Store any json returned for bigpipe -->
+        <div id="user-prompt-json" class="hidden">
+            {}
+        </div>
+
+        <!-- realtime host -->
+        <div id="realtime-host" class="hidden">realtime.hackerearth.com</div>
+        <!-- realtime port -->
+        <div id="realtime-port" class="hidden">80</div>
+
+        <!-- client name for updating parts of page in realtime -->
+        <div id="pusher-channel-name-0" class="hidden">92c8697ae4183c0870476712b4995b3462e976c6</div>
+
+
+        <div id="pusher-channel-name-1" class="hidden" realtime="true">private-ab6b031238b5bfa9002059977a9f4bb9e89a9f00</div>
+        <div id="pusher-channel-name-2" class="hidden">private-6d60007d6fa2a9b393ec80971cf738fdff53d981</div>
+
+
+
+
+            <div id="common-notification">
+            </div>
+
+        <!-- pusher app key -->
+        <div id="pusher-app-key" class="hidden">58a29e5cae2309f04b28</div>
+
+        <!-- ping url for user presence -->
+        <div id="ghost-ping-url" class="hidden" ajax="/ghost/ping/"></div>
+
+        <!-- All the scripts go here -->
+        <script>
+            var CURRENT_PATH = "https://www.hackerearth.com/codemonk/";
+            var HISTORY = '';
+        </script>
+
+
+        <!-- alljs: static_media/js/jquery-1.7.min.patched.js static_media/js/jquery.color.js static_media/js/jquery.elastic.js static_media/js/ajaxSend.js  static_media/js/jquery.inview.js  static_media/js/tooltip/jquery.tipTip.modified.js  static_media/offline/offline.min.js  static_media/js/watermark.min.js  static_media/history.js?v=0.1/scripts/bundled/html4html5/jquery.history.js  static_media/js/jquery.nicescroll.js  static_media/simplemodal/simplemodal.js static_media/js/jquery.sticky.js static_media/js/pusher.min.js static_media/js/ifvisible.min.js static_media/ghost/ghost.js static_media/feeds/feeds.js static_media/base/progress_bar.js -->
+        <script type='text/javascript' src="https://hackerearth.global.ssl.fastly.net/static/js/alljs.js?v=2.2"></script>
+        <script type="text/javascript" src="https://hackerearth.global.ssl.fastly.net/static/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script type='text/javascript' src='https://hackerearth.global.ssl.fastly.net/static/base/base1.0.1.js?v=7.7'></script>
+        <script type='text/javascript' src='https://hackerearth.global.ssl.fastly.net/static/bigpipe/bigpipe.js?v=0.3'></script>
+        <script type='text/javascript' src='https://hackerearth.global.ssl.fastly.net/static/realtime/pusher_realtime.js?v=2.4'></script>
+        <script type='text/javascript' src='https://hackerearth.global.ssl.fastly.net/static/user_prompts/userprompt.js?v=0.4'></script>
+        <script type='text/javascript' src="https://hackerearth.global.ssl.fastly.net/static/search/search.1.0.js"></script>
+        <script type='text/javascript' src='https://hackerearth.global.ssl.fastly.net/static/base/history.js?v=0.1'></script>
+        <script type='text/javascript' src='https://hackerearth.global.ssl.fastly.net/static/js/commentUtils.js'></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+        <script>
+            Offline.options = {
+                interceptRequests: false,
+                requests: false,
+            };
+        </script>
+
+        <script>
+            // do all maps stuff here
+            function initializeMaps(){
+
+                // Call other map functions
+                try{
+                    window.mapStuff();
+                } catch(err){
+                }
+
+                try{
+                    // Display footer maps
+                    var myOptions = {
+                        zoom:14,
+                        center:new google.maps.LatLng(12.9337468, 77.6149422),
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+                    var map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+                    var marker = new google.maps.Marker({
+                                map: map,
+                                position: new google.maps.LatLng(12.9337468, 77.6149422)
+                            });
+                    var infowindow = new google.maps.InfoWindow({
+                                    content:"<b>HackerEarth Technologies</b>"
+                                });
+                    google.maps.event.addListener(marker, "click", function(){
+                            infowindow.open(map,marker);
+                    });
+
+                }
+                catch(e){}
+            }
+
+            function loadMaps() {
+                var script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = 'https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&callback=initializeMaps'
+                document.body.appendChild(script);
+            }
+
+            $(document).ready(function(){
+                loadMaps();
+            });
+
+        </script>
+
+
+<script>
+    var profile_completeness_percentage = 53;
+</script>
+
+
+<script>
+$(document).ready(function (){
+    $('#header-notif-icon-trigger').click();
+
+
+    $('#live-events-trigger').click();
+
+
+
+
+
+    $('#user-notice-check-btn').click();
+
+
+    $('#indiahacks-widget-top .widget-header').on('click', function(){
+        $('#indiahacks-widget-top .widget-container .content').addClass('hidden');
+        $('#indiahacks-widget-top .widget-container .content').promise().done(function(){
+            $('#indiahacks-widget-top .widget-container').toggle('slide', function(){
+                $('#indiahacks-widget-top .widget-container .content').removeClass('hidden');
+            });
+        });
+    });
+    $('#indiahacks-widget-top .widget-container .content .sf-animation').find('img').live('inview', function(){
+        $(this).attr('src',$(this).attr('src'));
+    });
+    var check_indiahacks_cookie = readCookie('indiahacks_widget_seen');
+    if (!check_indiahacks_cookie){
+        $('#indiahacks-widget-bottom').delay(5000).slideToggle();
+    }
+    $('#indiahacks-widget-bottom .widget-container .widget-close').on('click', function(){
+        createCookie('indiahacks_widget_seen', 'true', 180);
+        $('#indiahacks-widget-bottom').slideToggle();
+    });
+
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+    var m_links = {};
+    var m_elements = {
+        '#modal-login-form input[type=submit]': 'Submit Modal Email Login',
+        '#modal-signup-form input[type=submit]': 'Submit Modal Email Signup',
+        '.modal-social-login .btn-facebook': 'Click Modal Facebook Login',
+        '.modal-social-login .btn-google': 'Click Modal Google Login',
+        '.modal-social-signup .btn-facebook': 'Click Modal Facebook Signup',
+        '.modal-social-signup .btn-google': 'Click Modal Google Signup',
+    };
+
+    for (var key in m_elements) {
+        $(key).live('click', {'key': key }, function(e) {
+            var key = e.data.key;
+            mixpanel.track(m_elements[key]);
+        });
+    }
+    for (var key in m_links) {
+        mixpanel.track_links(key, m_links[key]);
+    }
+});
+</script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    var m_links = {
+        '.track-header-challenges': 'Click Header Challenges',
+        '.track-header-problems': 'Click Header Problemset',
+        '.track-header-ama': 'Click Header Ama',
+        '.track-header-profile-box': 'Click Header Profile',
+        '.track-header-codemonk': 'Click Sub-Header CodeMonk',
+        '.track-header-notes': 'Click Sub-Header Notes',
+        '.track-header-job-listing': 'Click Sub-Header Job Listings',
+        '.track-header-companies': 'Click Sub-Header Companies',
+        '.track-header-profile-box-profile': 'Click Header-Dropdown My Profile',
+        '.track-header-profile-box-activity': 'Click Header-Dropdown My Activity',
+        '.track-header-profile-box-settings': 'Click Header-Dropdown Account Settings',
+        '.track-header-profile-box-invite': 'Click Header-Dropdown Invite Friends',
+        '.track-header-profile-box-docs': 'Click Header-Dropdown Documentation',
+        '.track-header-profile-box-codetable': 'Click Header-Dropdown CodeTable',
+        'track-header-profile-box-getstarted': 'Click Header-Dropdown Get Started',
+        '.track-header-profile-box-logout': 'Click Header-Dropdown Logout',
+    };
+    for (var key in m_links) {
+        mixpanel.track_links(key, m_links[key]);
+    }
+});
+</script>
+
+
+
+        <script>
+            // Used in search
+            var is_user_logged_in = true;
+        </script>
+
+        <script type="text/javascript" src="https://hackerearth.global.ssl.fastly.net/static/js/detect_timezone.js"></script>
+        <script>
+            $(document).ready(function(){
+                var timezone = jstz.determine_timezone(); // Now you have an instance of the TimeZone object.
+
+
+
+
+                    var profile_timezone = "Asia/Kolkata";
+                    if (timezone.name() !== profile_timezone) {
+                        $.ajax({
+                            type: "POST",
+                            url:"/users/AJAX/set-timezone/",
+                            data: {
+                            'timezone': timezone.name(),
+                            },
+                        });
+                    }
+
+
+
+            });
+        </script>
+
+
+
+
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                mixpanel.register({
+                    "username": "pandusonu",
+                    "email": "pandu.sonu@yahoo.com",
+                    "date_of_joining": "Dec. 27, 2014, 10:34 a.m.",
+                    "bucket": "0",
+                });
+
+            });
+        </script>
+
+
+<script type='text/javascript' src='https://hackerearth.global.ssl.fastly.net/static/problems/code_monk.js'></script>
+
+
+
+        <!-- google analytics start -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-34729975-1', 'auto');
+            ga('require', 'displayfeatures');
+
+            ga('set', '&uid', 235172);
+
+            ga('send', 'pageview');
+        </script>
+        <!-- google analytics end -->
+
+
+
+        <!-- mixpanel analytics start -->
+        <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("4c30b8635363027dfb780d5a61785112");</script>
+        <!-- mixpanel analytics end -->
+
+
+        <div id="fb-root"></div>
+        <script>
+            <!-- facebook button -->
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=109964005787822";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+            <!-- twitter button -->
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+            <!-- google+ button -->
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+
+
+        <script>
+        // Include the UserVoice JavaScript SDK (only needed once on a page)
+        UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/5F90ycbP4JOg1fOUoELScA.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+
+        //
+        // UserVoice Javascript SDK developer documentation:
+        // https://www.uservoice.com/o/javascript-sdk
+        //
+
+        // Set colors
+        UserVoice.push(['set', {
+          accent_color: '#448dd6',
+          trigger_color: 'white',
+          trigger_background_color: 'rgba(46, 49, 51, 0.6)'
+        }]);
+
+        // Identify the user and pass traits
+        // To enable, replace sample data with actual user traits and uncomment the line
+        UserVoice.push(['identify', {
+          //email:      'john.doe@example.com', // User’s email address
+          //name:       'John Doe', // User’s real name
+          //created_at: 1364406966, // Unix timestamp for the date the user signed up
+          //id:         123, // Optional: Unique id of the user (if set, this should not change)
+          //type:       'Owner', // Optional: segment your users by type
+          //account: {
+          //  id:           123, // Optional: associate multiple users with a single account
+          //  name:         'Acme, Co.', // Account name
+          //  created_at:   1364406966, // Unix timestamp for the date the account was created
+          //  monthly_rate: 9.99, // Decimal; monthly rate of the account
+          //  ltv:          1495.00, // Decimal; lifetime value of the account
+          //  plan:         'Enhanced' // Plan name for the account
+          //}
+        }]);
+
+        // Add default trigger to the bottom-right corner of the window:
+        UserVoice.push(['addTrigger', { mode: 'contact', trigger_position: 'bottom-right' }]);
+
+        // Or, use your own custom trigger:
+        //UserVoice.push(['addTrigger', '#id', { mode: 'contact' }]);
+
+        // Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+        UserVoice.push(['autoprompt', {}]);
+        </script>
+
+    </body>
+</html>
