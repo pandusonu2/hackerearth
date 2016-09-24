@@ -14,7 +14,7 @@ do
   page="www.hackerearth.com$link2"
   echo $output
   wget -o log.txt -O $output.html $page
-  html2pdf $output.html $output.pdf
+  wkhtmltopdf $output.html $output.pdf
   rm $output.html
 done
 rm log.txt
